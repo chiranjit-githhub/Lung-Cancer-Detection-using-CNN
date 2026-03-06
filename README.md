@@ -1,28 +1,19 @@
-Lung Cancer Detection Using CNN
+Lung Cancer Prediction using CNN and Transfer Learning
 Author
 
 Chiranjit Sahu
 
 Project Title
 
-Lung Cancer Detection from CT Scan Images Using Convolutional Neural Network (CNN)
+Lung Cancer Prediction Using Convolutional Neural Networks (CNN) and Transfer Learning
 
 Project Description
 
-Lung cancer is one of the most serious and life-threatening diseases worldwide. Early detection can help improve survival rates and assist doctors in making better treatment decisions.
+Lung cancer is one of the leading causes of cancer-related deaths worldwide. Early detection and classification of lung cancer are important for improving patient survival rates.
 
-This project uses a Convolutional Neural Network (CNN) to analyze CT scan images of lungs and classify them into different categories of lung cancer or normal lungs.
+This project develops a deep learning model using Convolutional Neural Networks (CNN) and transfer learning to classify lung CT scan images into four categories:
 
-The model is trained on a dataset of CT scan images and can predict the type of lung cancer or healthy lung condition when a new CT scan image is provided as input.
-
-Methodology
-
-The following steps were followed in this project:
-
-1. Data Collection
-
-A publicly available Chest CT Scan Images dataset was used.
-The dataset contains CT scan images of lungs classified into four categories:
+Normal
 
 Adenocarcinoma
 
@@ -30,40 +21,66 @@ Large Cell Carcinoma
 
 Squamous Cell Carcinoma
 
-Normal Lung
+The model is trained on a dataset of lung CT scan images and can predict the type of lung condition when a new CT scan image is provided.
+
+Methodology
+
+The following steps were followed in this project:
+
+1. Data Collection
+
+A publicly available Chest CT Scan Images dataset from Kaggle was used.
+
+Dataset Link:
+https://www.kaggle.com/datasets/mohamedhanyyy/chest-ctscan-images
+
+The dataset contains CT scan images divided into four classes.
 
 2. Data Preprocessing
 
 Before training the model, the images were preprocessed by:
 
-Resizing images to a fixed size (224 × 224)
+Resizing images to 350 × 350 pixels
 
 Normalizing pixel values
 
-Organizing images into training and validation folders
+Organizing images into train, validation, and test folders
+
+Using ImageDataGenerator for augmentation
 
 3. Model Development
 
-A Convolutional Neural Network (CNN) was built using TensorFlow and Keras.
+The project uses Transfer Learning with the Xception model.
 
-The CNN architecture includes:
+Steps include:
 
-Convolution layers for feature extraction
+Load the pretrained Xception model
 
-MaxPooling layers for dimensionality reduction
+Freeze base model layers
 
-Fully connected dense layers for classification
+Add custom layers for classification
 
-Softmax output layer for multi-class prediction
+Use GlobalAveragePooling2D and Dense layers
 
 4. Model Training
 
-The model was trained using the training dataset for multiple epochs.
-Validation data was used to evaluate the performance of the model during training.
+The model is trained using:
+
+Training dataset
+
+Validation dataset
+
+Adam optimizer
+
+Categorical cross-entropy loss function
+
+Multiple training epochs
+
+Callbacks such as EarlyStopping and ModelCheckpoint are used to improve performance.
 
 5. Prediction
 
-After training, the model can predict the class of a new CT scan image uploaded by the user.
+After training, the model can predict the class of new CT scan images uploaded by the user.
 
 The system outputs:
 
@@ -71,21 +88,28 @@ Predicted lung condition
 
 Confidence score
 
-Display of the input CT scan image
+Visualization of the input CT scan image
 
 Results
 
-The trained CNN model was able to classify CT scan images into the four lung categories.
-
-Example output:
+After training the CNN model, the following results were obtained:
+Final training accuracy: history.history['accuracy'][-1]
+Final validation accuracy: history.history['val_accuracy'][-1]
+Model accuracy: 90%
+Example prediction output:
 
 Detected Condition: Adenocarcinoma Lung Cancer
 Confidence: 92.45 %
 
-The results demonstrate that deep learning techniques can assist in identifying lung cancer patterns from CT scan images.
+The model successfully classifies CT scan images into different lung cancer types with good accuracy.
 
 Conclusion
 
-This project demonstrates the use of deep learning and convolutional neural networks in medical image classification. The model can assist in detecting lung cancer patterns from CT scan images and shows the potential of AI in medical diagnostics.
+This project demonstrates the use of deep learning and transfer learning techniques for lung cancer detection from CT scan images. The results show that CNN-based models can effectively assist in medical image classification and support early diagnosis.
 
+Acknowledgements
 
+Dataset provided by:
+
+Chest CT Scan Images Dataset (Kaggle)
+https://www.kaggle.com/datasets/mohamedhanyyy/chest-ctscan-images
