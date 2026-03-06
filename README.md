@@ -1,45 +1,28 @@
-🫁 Lung Cancer Detection Using CNN
-📌 Project Overview
+Lung Cancer Detection Using CNN
+Author
 
-Lung cancer is one of the leading causes of cancer-related deaths worldwide. Early detection can significantly improve survival rates.
+Chiranjit Sahu
 
-This project uses a Convolutional Neural Network (CNN) to analyze CT scan images of lungs and predict whether the lung is healthy or affected by different types of lung cancer.
+Project Title
 
-The system is trained on a CT scan image dataset and can predict the class of a new CT scan image uploaded by the user.
+Lung Cancer Detection from CT Scan Images Using Convolutional Neural Network (CNN)
 
-🎯 Objectives
+Project Description
 
-Detect lung cancer from CT scan images using deep learning.
+Lung cancer is one of the most serious and life-threatening diseases worldwide. Early detection can help improve survival rates and assist doctors in making better treatment decisions.
 
-Classify lung images into different cancer categories.
+This project uses a Convolutional Neural Network (CNN) to analyze CT scan images of lungs and classify them into different categories of lung cancer or normal lungs.
 
-Provide user-readable prediction results.
+The model is trained on a dataset of CT scan images and can predict the type of lung cancer or healthy lung condition when a new CT scan image is provided as input.
 
-Allow users to upload their own CT scan image for prediction.
+Methodology
 
-🧠 Technologies Used
+The following steps were followed in this project:
 
-Python
+1. Data Collection
 
-TensorFlow / Keras
-
-CNN (Convolutional Neural Network)
-
-NumPy
-
-Matplotlib
-
-OpenDatasets
-
-Google Colab / Jupyter Notebook
-
-📂 Dataset
-
-Dataset used in this project:
-
-Chest CT Scan Images Dataset from Kaggle.
-
-The dataset contains 4 classes of CT scan images:
+A publicly available Chest CT Scan Images dataset was used.
+The dataset contains CT scan images of lungs classified into four categories:
 
 Adenocarcinoma
 
@@ -49,127 +32,60 @@ Squamous Cell Carcinoma
 
 Normal Lung
 
-Dataset link:
+2. Data Preprocessing
 
-https://www.kaggle.com/datasets/mohamedhanyyy/chest-ctscan-images
+Before training the model, the images were preprocessed by:
 
-⚙️ Project Workflow
-1️⃣ Dataset Download
+Resizing images to a fixed size (224 × 224)
 
-The dataset is downloaded using OpenDatasets from Kaggle.
+Normalizing pixel values
 
-2️⃣ Data Preprocessing
+Organizing images into training and validation folders
 
-Image resizing
+3. Model Development
 
-Normalization
+A Convolutional Neural Network (CNN) was built using TensorFlow and Keras.
 
-Data augmentation
+The CNN architecture includes:
 
-3️⃣ Model Building
+Convolution layers for feature extraction
 
-A CNN model is built using TensorFlow/Keras including:
+MaxPooling layers for dimensionality reduction
 
-Convolution layers
+Fully connected dense layers for classification
 
-MaxPooling layers
+Softmax output layer for multi-class prediction
 
-Fully connected layers
+4. Model Training
 
-4️⃣ Model Training
+The model was trained using the training dataset for multiple epochs.
+Validation data was used to evaluate the performance of the model during training.
 
-The model is trained using:
+5. Prediction
 
-Training dataset
+After training, the model can predict the class of a new CT scan image uploaded by the user.
 
-Validation dataset
+The system outputs:
 
-Multiple epochs
+Predicted lung condition
 
-5️⃣ Prediction
+Confidence score
 
-Users can upload a new CT scan image, and the model will predict:
+Display of the input CT scan image
 
-Cancer Type
+Results
 
-Confidence Score
+The trained CNN model was able to classify CT scan images into the four lung categories.
 
-🏗 Model Architecture
-
-The CNN model consists of:
-
-Conv2D Layer
-
-MaxPooling Layer
-
-Flatten Layer
-
-Dense Layers
-
-Softmax Output Layer
-
-Output classes = 4
-
-▶️ How to Run the Project
-1️⃣ Install Required Libraries
-pip install tensorflow
-pip install opendatasets
-pip install numpy
-pip install matplotlib
-2️⃣ Download Dataset
-import opendatasets as od
-
-dataset_url = "https://www.kaggle.com/datasets/mohamedhanyyy/chest-ctscan-images"
-od.download(dataset_url)
-3️⃣ Train the Model
-
-Run the training cells in the notebook to train the CNN model.
-
-4️⃣ Predict Using a New CT Scan
-predict_uploaded_image("ctscan_input.jpg")
-
-The model will output:
+Example output:
 
 Detected Condition: Adenocarcinoma Lung Cancer
-Confidence: 94.23 %
-📊 Output
+Confidence: 92.45 %
 
-The system displays:
+The results demonstrate that deep learning techniques can assist in identifying lung cancer patterns from CT scan images.
 
-CT scan image
+Conclusion
 
-Predicted cancer type
+This project demonstrates the use of deep learning and convolutional neural networks in medical image classification. The model can assist in detecting lung cancer patterns from CT scan images and shows the potential of AI in medical diagnostics.
 
-Prediction confidence
 
-🚀 Features
-
-Automatic dataset download
-
-CNN-based classification
-
-Image upload prediction
-
-User-readable output
-
-Visualization of predictions
-
-⚠️ Limitations
-
-Accuracy depends on dataset size and quality.
-
-The model is intended for educational purposes only and not for clinical diagnosis.
-
-🔮 Future Improvements
-
-Use Transfer Learning (EfficientNet / ResNet)
-
-Improve dataset size
-
-Deploy as a web application
-
-Add Grad-CAM visualization for tumor detection
-
-👨‍💻 Author
-
-Chiranjit Sahu# Lung-Cancer-Detection-using-CNN
