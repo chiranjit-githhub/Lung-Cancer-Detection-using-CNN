@@ -1,115 +1,166 @@
-Lung Cancer Prediction using CNN and Transfer Learning
-Author
+# Lung Cancer Prediction using CNN and Transfer Learning
 
-Chiranjit Sahu
+This project aims to build a Lung Cancer Prediction System using Convolutional Neural Networks (CNN) and transfer learning. The model classifies lung cancer images into four categories: Normal, Adenocarcinoma, Large Cell Carcinoma, and Squamous Cell Carcinoma.
 
-Project Title
+## Author: Chiranjit Sahu
 
-Lung Cancer Prediction Using Convolutional Neural Networks (CNN) and Transfer Learning
+## Table of Contents
+- [Introduction](#introduction)
+- [Dataset](#dataset)
+- [Dependencies](#dependencies)
+- [Methodology](#methodology)
+- [Results](#results)
+- [Acknowledgements](#acknowledgements)
 
-Project Description
+## Introduction
 
-Lung cancer is one of the leading causes of cancer-related deaths worldwide. Early detection and classification of lung cancer are important for improving patient survival rates.
+Lung cancer is one of the leading causes of cancer-related deaths worldwide. Early detection and accurate classification are crucial for effective treatment and patient survival. This project leverages deep learning techniques to develop a robust lung cancer classification model using chest X-ray images.
 
-This project develops a deep learning model using Convolutional Neural Networks (CNN) and transfer learning to classify lung CT scan images into four categories:
+## Dataset
 
-Normal
+The dataset used in this project consists of lung cancer images categorized into four classes:
+1. Normal
+2. Adenocarcinoma
+3. Large Cell Carcinoma
+4. Squamous Cell Carcinoma
 
-Adenocarcinoma
+The dataset should be organized into training (`train`), validation (`valid`), and testing (`test`) folders with the following subfolders for each class:
 
-Large Cell Carcinoma
+- `train/`
+  - `normal/`
+  - `adenocarcinoma/`
+  - `large_cell_carcinoma/`
+  - `squamous_cell_carcinoma/`
 
-Squamous Cell Carcinoma
+- `valid/`
+  - `normal/`
+  - `adenocarcinoma/`
+  - `large_cell_carcinoma/`
+  - `squamous_cell_carcinoma/`
 
-The model is trained on a dataset of lung CT scan images and can predict the type of lung condition when a new CT scan image is provided.
+- `test/`
+  - `normal/`
+  - `adenocarcinoma/`
+  - `large_cell_carcinoma/`
+  - `squamous_cell_carcinoma/`
 
-Methodology
+Alternatively, you can also download a similar dataset from [Kaggle](https://www.kaggle.com/datasets/mohamedhanyyy/chest-ctscan-images) which includes Chest CT scan images.
 
-The following steps were followed in this project:
+### Google Colab Link
+To replicate and run the project in Google Colab, use the following link: [Lung Cancer Prediction System on Colab]https://colab.research.google.com/drive/1pmhqUX2C-bMWdFf3Na_Pa_kq040kkvSu#scrollTo=lkMToroUaOb5
+
+
+### Usage
+
+- **Direct Download**: You can download the dataset directly from this repository and store it on your local system.
+- **Google Drive**: Alternatively, you can store the dataset in your Google Drive and mount it using the provided code to replicate the environment used in this project.
+
+## Dependencies
+
+The project requires the following libraries:
+- Python 3.x
+- pandas
+- numpy
+- seaborn
+- matplotlib
+- scikit-learn
+- tensorflow
+- keras
+
+You can install the required libraries using the following command:
+
+```bash
+pip install pandas numpy seaborn matplotlib scikit-learn tensorflow keras
+```
+
+## Methodology
+The project follows these main steps:
 
 1. Data Collection
 
 A publicly available Chest CT Scan Images dataset from Kaggle was used.
 
-Dataset Link:
-https://www.kaggle.com/datasets/mohamedhanyyy/chest-ctscan-images
-
-The dataset contains CT scan images divided into four classes.
-
 2. Data Preprocessing
 
-Before training the model, the images were preprocessed by:
+The images were prepared before training by:
 
-Resizing images to 350 × 350 pixels
+- Resizing images to 350 × 350 pixels
 
-Normalizing pixel values
+- Normalizing pixel values
 
-Organizing images into train, validation, and test folders
+- Organizing images into training, validation, and testing folders
 
-Using ImageDataGenerator for augmentation
+- Applying ImageDataGenerator for data augmentation
 
 3. Model Development
 
-The project uses Transfer Learning with the Xception model.
+- A Transfer Learning approach using the Xception model was used.
 
 Steps include:
 
-Load the pretrained Xception model
+- Loading the pretrained Xception model
 
-Freeze base model layers
+- Freezing the base layers
 
-Add custom layers for classification
+- Adding custom classification layers
 
-Use GlobalAveragePooling2D and Dense layers
+- Using GlobalAveragePooling2D and Dense layers
 
 4. Model Training
 
-The model is trained using:
+- The model was trained using:
 
-Training dataset
+- Training dataset
 
-Validation dataset
+- Validation dataset
 
-Adam optimizer
+- Adam optimizer
 
-Categorical cross-entropy loss function
+- Categorical cross-entropy loss
 
-Multiple training epochs
+- Multiple training epochs
 
-Callbacks such as EarlyStopping and ModelCheckpoint are used to improve performance.
+- Callbacks such as EarlyStopping and ModelCheckpoint were used to improve model performance.
 
 5. Prediction
 
 After training, the model can predict the class of new CT scan images uploaded by the user.
 
-The system outputs:
+The output includes:
 
-Predicted lung condition
+- Predicted lung condition
 
-Confidence score
+- Confidence score
 
-Visualization of the input CT scan image
+- Display of the CT scan image
 
-Results
 
-After training the CNN model, the following results were obtained:
-Final training accuracy: history.history['accuracy'][-1]
-Final validation accuracy: history.history['val_accuracy'][-1]
-Model accuracy: 90%
-Example prediction output:
+## Results
 
-Detected Condition: Adenocarcinoma Lung Cancer
-Confidence: 92.45 %
+After training and evaluating the lung cancer prediction model, the following results were obtained:
 
-The model successfully classifies CT scan images into different lung cancer types with good accuracy.
+- Final training accuracy: `history.history['accuracy'][-1]`
+- Final validation accuracy: `history.history['val_accuracy'][-1]`
+- Model accuracy: 90%
 
-Conclusion
 
-This project demonstrates the use of deep learning and transfer learning techniques for lung cancer detection from CT scan images. The results show that CNN-based models can effectively assist in medical image classification and support early diagnosis.
+### Example Predictions
 
-Acknowledgements
 
-Dataset provided by:
+<img width="889" height="671" alt="image" src="https://github.com/user-attachments/assets/94a510cb-88bb-4d48-84c1-2fb93d6d3654" />
 
-Chest CT Scan Images Dataset (Kaggle)
-https://www.kaggle.com/datasets/mohamedhanyyy/chest-ctscan-images
+## After training, the model can be used to predict the class of a new CT scan image.
+<img width="865" height="751" alt="image" src="https://github.com/user-attachments/assets/56f2aa5f-cfae-4852-ad9c-a89a1d695ac2" />
+
+
+
+## Acknowledgements
+
+We acknowledge and thank the contributors to the [Chest CT Scan Images Dataset](https://www.kaggle.com/datasets/mohamedhanyyy/chest-ctscan-images) on Kaggle for providing the dataset used in this project.
+
+
+
+
+
+
+
