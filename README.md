@@ -1,6 +1,6 @@
-# Lung Cancer Prediction using CNN and Transfer Learning
+# Lung Cancer Prediction using CNN
 
-This project aims to build a Lung Cancer Prediction System using Convolutional Neural Networks (CNN) and transfer learning. The model classifies lung cancer images into four categories: Normal, Adenocarcinoma, Large Cell Carcinoma, and Squamous Cell Carcinoma.
+This project aims to build a Lung Cancer Prediction System using Convolutional Neural Networks (CNN). The model classifies lung cancer images into four categories: Normal, Adenocarcinoma, Large Cell Carcinoma, and Squamous Cell Carcinoma.
 
 ## Author: Chiranjit Sahu
 
