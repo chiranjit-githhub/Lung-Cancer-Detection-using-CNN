@@ -1,6 +1,6 @@
-# Lung Cancer Prediction using CNN
+# Lung Cancer Detection using CNN
 
-This project aims to build a Lung Cancer Prediction System using Convolutional Neural Networks (CNN). The model classifies lung cancer images into four categories: Normal, Adenocarcinoma, Large Cell Carcinoma, and Squamous Cell Carcinoma.
+This project aims to build a Lung Cancer Detection System using Convolutional Neural Networks (CNN). The model classifies lung cancer images into four categories: Normal, Adenocarcinoma, Large Cell Carcinoma, and Squamous Cell Carcinoma.
 
 ## Author: Chiranjit Sahu
 
